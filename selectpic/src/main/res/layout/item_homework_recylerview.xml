@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_homework_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="15dp"
+        android:text="语文作业"
+        android:textColor="@color/text_title"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/tv_homework_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        android:text="2017年4月5日 16:12:00"
+        android:textColor="@color/context_color2" />
+
+    <View
+        android:layout_width="388dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/frame_base_background" />
+
+    <TextView
+        android:lines="4"
+        android:id="@+id/tv_homework_context"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="134px"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="      语文作业:背诵第一课时的《温州皮革厂是如何倒闭的》预习第二课时《你的滑板鞋和套鞋》"
+        android:textColor="@color/text_color" />
+
+    <ImageView
+        android:id="@+id/iv_homework_image"
+        android:layout_width="220px"
+        android:layout_height="220px"
+        android:background="@mipmap/vido"
+        android:visibility="gone" />
+
+    <MediaController
+        android:id="@+id/mc_video"
+        android:layout_width="220px"
+        android:layout_height="220px"
+        android:layout_marginLeft="8dp"
+        android:background="@mipmap/vido"
+        android:visibility="visible">
+
+    </MediaController>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30px">
+
+        <TextView
+            android:id="@+id/tv_homework_seer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="6dp"
+            android:layout_toLeftOf="@+id/tv_homework_chats"
+            android:text="53 查看"
+            android:textColor="@color/context_color2" />
+
+        <TextView
+            android:id="@+id/tv_homework_chats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:text="15 回复"
+            android:textColor="@color/context_color2" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"
+        android:background="@color/frame_base_background" />
+
+</LinearLayout>

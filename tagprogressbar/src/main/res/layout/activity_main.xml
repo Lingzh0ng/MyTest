@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wearapay.tagprogressbar.MainActivity">
+
+<com.wearapay.tagprogressbar.TagProgressBar
+    android:id="@+id/tagbar"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:padding="20dp"
+    app:pp_current_progress="0"
+    />
+
+ <com.wearapay.tagprogressbar.TagProgressBar1
+    android:id="@+id/tagbar1"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:padding="40dp"
+    app:pp_current_progress="0"
+    />
+
+ <com.wearapay.tagprogressbar.TagProgressBar1
+     android:id="@+id/tagbar2"
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:padding="20dp"
+     app:pp_current_progress="0"
+     />
+
+ <com.wearapay.tagprogressbar.TagProgressBar1
+     android:id="@+id/tagbar3"
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:padding="10dp"
+     app:pp_current_progress="0"
+     />
+
+ <SeekBar
+     android:id="@+id/seekbar"
+     android:layout_marginTop="200dp"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     />
+
+ <com.wearapay.tagprogressbar.MiuiWeatherView
+     android:id="@+id/weather"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     app:line_interval="60dp"
+     app:min_point_height="60dp"
+     app:background_color="#ffffff"/>
+
+</LinearLayout>

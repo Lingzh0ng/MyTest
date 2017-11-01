@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        >
+
+
+      <include
+          layout="@layout/layout_title"
+          android:id="@+id/layout_bar"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="21dp"
+          android:layout_marginTop="58px"
+          android:text="请输入科目标题:"
+          android:textColor="@color/context_color2"
+          android:textSize="18dp"
+          />
+
+      <RelativeLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_marginTop="26px"
+          >
+
+        <com.wearapay.selectpic.ContainsEmojiEditText
+            android:id="@+id/et_title"
+            android:layout_width="368dp"
+            android:layout_height="43dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:gravity="top|left"
+            android:padding="10dp"
+            android:textColor="@color/context_color2"
+            android:textCursorDrawable="@null"
+            />
+
+        <ImageView
+            android:layout_width="368dp"
+            android:layout_height="1px"
+            android:layout_alignTop="@+id/et_title"
+            android:src="@color/text_selected"
+            />
+
+        <ImageView
+            android:layout_width="368dp"
+            android:layout_height="1px"
+            android:layout_alignBottom="@+id/et_title"
+            android:src="@color/text_selected"
+            />
+
+        <ImageView
+            android:layout_width="1px"
+            android:layout_height="43dp"
+            android:src="@color/text_selected"
+            />
+
+        <ImageView
+            android:layout_width="1px"
+            android:layout_height="43dp"
+            android:layout_toRightOf="@+id/et_title"
+            android:src="@color/text_selected"
+            />
+      </RelativeLayout>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="21dp"
+          android:layout_marginTop="30dp"
+          android:text="请输入作业内容:"
+          android:textColor="@color/context_color2"
+          android:textSize="18dp"
+          />
+
+      <RelativeLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_marginTop="26px"
+          >
+
+        <com.wearapay.selectpic.ContainsEmojiEditText
+            android:id="@+id/et_context"
+            android:layout_width="368dp"
+            android:layout_height="190dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="top|left"
+            android:padding="10dp"
+            android:textColor="@color/context_color2"
+            android:textCursorDrawable="@null"
+            />
+
+        <ImageView
+            android:layout_width="368dp"
+            android:layout_height="1px"
+            android:layout_alignTop="@+id/et_context"
+            android:src="@color/text_selected"
+            />
+
+        <ImageView
+            android:layout_width="368dp"
+            android:layout_height="1px"
+            android:layout_alignBottom="@+id/et_context"
+            android:src="@color/text_selected"
+            />
+
+        <ImageView
+            android:layout_width="1dp"
+            android:layout_height="190dp"
+            android:src="@color/text_selected"
+            />
+
+        <ImageView
+            android:layout_width="1dp"
+            android:layout_height="190dp"
+            android:layout_toRightOf="@+id/et_context"
+            android:src="@color/text_selected"
+            />
+
+      </RelativeLayout>
+
+      <com.wearapay.selectpic.NoScrollGridView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          >
+
+      </com.wearapay.selectpic.NoScrollGridView>
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="20dp"
+          android:layout_marginTop="40dp"
+          >
+
+        <ImageView
+            android:id="@+id/iv_addimg"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/add_img"
+            />
+
+
+        <ImageView
+            android:id="@+id/iv_addvideo"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="21dp"
+            android:background="@mipmap/add_video"
+            />
+      </LinearLayout>
+    </LinearLayout>
+  </ScrollView>
+  <Button
+      android:id="@+id/bt_classname"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_alignParentBottom="true"
+      android:background="@color/title_test"
+      android:text="选择班级"
+      android:textColor="@color/white"
+      android:textSize="18dp"
+      android:visibility="visible"
+      />
+
+  <Button
+      android:id="@+id/bt_commit"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_alignParentBottom="true"
+      android:background="@color/title_test"
+      android:text="发布"
+      android:textColor="@color/white"
+      android:textSize="18dp"
+      android:visibility="gone"
+      />
+</RelativeLayout>

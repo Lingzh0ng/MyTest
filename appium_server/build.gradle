@@ -1,0 +1,107 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+    dependencies {
+        classpath 'com.github.JakeWharton:sdk-manager-plugin:0ce4cdf08009d79223850a59959d9d6e774d0f77'
+    }
+}
+
+apply plugin: 'android-sdk-manager'
+apply plugin: 'com.android.application'
+
+// optionally including an emulator
+//sdkManager {
+//    emulatorVersion 'android-23'
+//    emulatorArchitecture 'x86' // optional, defaults to arm
+//}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '23.0.1'
+    defaultConfig {
+        applicationId "io.appium.uiautomator2"
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 1
+        archivesBaseName = "appium-uiautomator2"
+        /**
+         * versionName should be updated and inline with version in package.json for every npm release.
+         */
+        versionName "0.1.5"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        customDebuggableBuildType {
+            debuggable true
+        }
+        applicationVariants.all { variant ->
+            appendVersionNameVersionCode(variant, defaultConfig)
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+    productFlavors {
+        e2eTest {
+            applicationId 'io.appium.uiautomator2.e2etest'
+        }
+        server {
+            applicationId 'io.appium.uiautomator2.server'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/maven/com.google.guava/guava/pom.properties'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.xml'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'io.netty:netty-all:4.0.41.Final'
+    compile 'com.jayway.jsonpath:json-path:0.8.1'
+    compile 'com.squareup.okhttp:okhttp:2.5.0'
+    compile 'com.android.support.test:runner:0.5'
+    compile 'com.android.support:support-annotations:23.1.1'
+    compile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
+    androidTestCompile 'junit:junit:4.12'
+    androidTestCompile 'com.android.support:support-annotations:23.1.1'
+    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
+    androidTestCompile 'com.android.support.test.espresso:espresso-web:2.2.2'
+}
+
+task installAUT(type: Exec) {
+    group = 'test'
+    description = 'Install app under test'
+    def adb = android.getAdbExe().toString()
+    def apk = file('../app/src/androidTestE2eTest/java/io/appium/uiautomator2/unittest/resource/ApiDemos-debug.apk')
+    commandLine "$adb install -rg $apk".split(' ')
+    standardOutput = new ByteArrayOutputStream()
+    ext.output = {
+        return standardOutput.toString()
+    }
+    println ext.output.toString()
+}
+
+afterEvaluate {
+    tasks.each { task ->
+        if (task.name.startsWith('connectedE2eTestDebugAndroidTest')) {
+            task.dependsOn installAUT
+        }
+    }
+}
+
+def appendVersionNameVersionCode(variant, defaultConfig) {
+    variant.outputs.each { output ->
+        def file = output.packageApplication.outputFile
+        def fileName = file.name.replace("debug.apk", "v${defaultConfig.versionName}.apk")
+        output.packageApplication.outputFile = new File(file.parent, fileName)
+    }
+}
+
+

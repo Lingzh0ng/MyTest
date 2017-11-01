@@ -1,0 +1,11 @@
+include ':appiumdemo', ':pc-charge', ':ypulltorefresh', ':ocrdemo', ':tagprogressbar', ':mylocation', ':day&night',
+    'appium_server',':widget'
+/*include *//*':weather', ':flowlayout',
+    ':selectpic' ,*//* ':pc-charge',
+    ':wall'*/
+/*':app', ':pulltorefresh', ':chatdemo', ':lib', ':textdemo', ':mydownloader',*/
+/* ':constraintdemo', ':camerademo',*/
+//    ':zxingdemo',
+//    ':notificationdemo',
+//    ':coordinatordemo', ':weather'
+//    ,':lib_test', ':myapplication', ':WheelPicker', ':choicecontactsperson'

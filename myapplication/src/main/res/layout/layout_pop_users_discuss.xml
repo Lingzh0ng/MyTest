@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pop_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:orientation="vertical"
+    >
+  <com.chanven.lib.cptr.loadmore.GridViewWithHeaderAndFooter
+      android:id="@+id/gridView"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/white"
+      android:cacheColorHint="#00000000"
+      android:columnWidth="50dp"
+      android:fadingEdge="none"
+      android:gravity="center"
+      android:horizontalSpacing="0dp"
+      android:listSelector="#00000000"
+      android:numColumns="4"
+      android:stretchMode="columnWidth"
+      >
+  </com.chanven.lib.cptr.loadmore.GridViewWithHeaderAndFooter>
+
+  <TextView
+      android:id="@+id/tv_no_data_show"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_gravity="center_vertical|center_horizontal"
+      android:layout_marginTop="80dp"
+      android:text="暂无数据!"
+      android:textColor="@color/color90"
+      android:textSize="16sp"
+      android:visibility="gone"
+      />
+</RelativeLayout>

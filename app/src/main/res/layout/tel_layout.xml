@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    >
+  <FrameLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      >
+    <com.wearapay.pulltorefresh.widget.XListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        />
+    <com.wearapay.mytest.ui.TextSpaceView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E4E5DA"
+        android:padding="5dp"
+        android:text="#"
+        android:textColor="#000"
+        />
+    <com.wearapay.mytest.ui.TelPhoneView
+        android:id="@+id/telView"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        />
+  </FrameLayout>
+
+</LinearLayout>

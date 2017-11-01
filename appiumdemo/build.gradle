@@ -1,0 +1,19 @@
+apply plugin: 'java'
+apply plugin: 'application'
+mainClassName="com.example.MyClass"
+
+tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
+dependencies {
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  compile 'io.appium:java-client:5.0.1'
+  //  compile 'org.seleniumhq.selenium:selenium-java:3.4.0'
+}
+
+//sourceCompatibility = "1.7"
+//targetCompatibility = "1.7"
+
+task runnbaleJar(type: Jar) {
+  from files(sourceSets.main.output.classesDir)
+  from configurations.runtime.asFileTree.files.collect { zipTree(it) }
+  manifest { attributes 'Main-Class': 'com.example.MyClass' }
+}
